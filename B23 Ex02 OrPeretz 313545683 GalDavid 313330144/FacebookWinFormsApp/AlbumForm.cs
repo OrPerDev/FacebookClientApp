@@ -13,6 +13,10 @@ namespace BasicFacebookFeatures
 
         public AlbumForm(Album i_AlbumToDisplay)
         {
+            if (i_AlbumToDisplay.Photos.Count == 0)
+            {
+                throw new Exception("The album has no pictures in it!");
+            }
             this.r_AlbumToDisplay = i_AlbumToDisplay;
             this.r_AlbumPhotos = i_AlbumToDisplay.Photos;
             InitializeComponent();

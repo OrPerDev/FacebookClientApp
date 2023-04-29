@@ -242,7 +242,7 @@ namespace BasicFacebookFeatures
             // linkLabel
             // 
             linkLabel.AutoSize = true;
-            linkLabel.Location = new System.Drawing.Point(249, 352);
+            linkLabel.Location = new System.Drawing.Point(246, 352);
             linkLabel.Name = "linkLabel";
             linkLabel.Size = new System.Drawing.Size(30, 15);
             linkLabel.TabIndex = 3;
@@ -251,7 +251,7 @@ namespace BasicFacebookFeatures
             // messageLabel
             // 
             messageLabel.AutoSize = true;
-            messageLabel.Location = new System.Drawing.Point(249, 7);
+            messageLabel.Location = new System.Drawing.Point(246, 6);
             messageLabel.Name = "messageLabel";
             messageLabel.Size = new System.Drawing.Size(53, 15);
             messageLabel.TabIndex = 5;
@@ -381,7 +381,7 @@ namespace BasicFacebookFeatures
             // descriptionLabel2
             // 
             descriptionLabel2.AutoSize = true;
-            descriptionLabel2.Location = new System.Drawing.Point(249, 7);
+            descriptionLabel2.Location = new System.Drawing.Point(246, 7);
             descriptionLabel2.Name = "descriptionLabel2";
             descriptionLabel2.Size = new System.Drawing.Size(65, 15);
             descriptionLabel2.TabIndex = 1;
@@ -770,7 +770,7 @@ namespace BasicFacebookFeatures
             this.taggedPicturesPicturebox.ErrorImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
             this.taggedPicturesPicturebox.Image = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
             this.taggedPicturesPicturebox.InitialImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
-            this.taggedPicturesPicturebox.Location = new System.Drawing.Point(252, 429);
+            this.taggedPicturesPicturebox.Location = new System.Drawing.Point(246, 429);
             this.taggedPicturesPicturebox.Name = "taggedPicturesPicturebox";
             this.taggedPicturesPicturebox.Size = new System.Drawing.Size(290, 290);
             this.taggedPicturesPicturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -785,7 +785,7 @@ namespace BasicFacebookFeatures
             // 
             this.taggedPhotoLinkLabel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.photoBindingSource, "Link", true));
             this.taggedPhotoLinkLabel.LinkColor = System.Drawing.SystemColors.ButtonFace;
-            this.taggedPhotoLinkLabel.Location = new System.Drawing.Point(249, 369);
+            this.taggedPhotoLinkLabel.Location = new System.Drawing.Point(246, 369);
             this.taggedPhotoLinkLabel.Name = "taggedPhotoLinkLabel";
             this.taggedPhotoLinkLabel.Size = new System.Drawing.Size(289, 27);
             this.taggedPhotoLinkLabel.TabIndex = 4;
@@ -797,7 +797,7 @@ namespace BasicFacebookFeatures
             // 
             this.messageTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.photoBindingSource, "Message", true));
             this.messageTextBox.Enabled = false;
-            this.messageTextBox.Location = new System.Drawing.Point(252, 28);
+            this.messageTextBox.Location = new System.Drawing.Point(246, 24);
             this.messageTextBox.Multiline = true;
             this.messageTextBox.Name = "messageTextBox";
             this.messageTextBox.ReadOnly = true;

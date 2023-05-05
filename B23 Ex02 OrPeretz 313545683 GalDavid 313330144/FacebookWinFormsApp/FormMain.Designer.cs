@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace BasicFacebookFeatures
+namespace FacebookAppClient
 {
     partial class FormMain
     {
@@ -419,9 +419,9 @@ namespace BasicFacebookFeatures
             // imageNormalPictureBox
             // 
             this.imageNormalPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.groupBindingSource, "ImageNormal", true));
-            this.imageNormalPictureBox.ErrorImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
-            this.imageNormalPictureBox.Image = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
-            this.imageNormalPictureBox.InitialImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
+            this.imageNormalPictureBox.ErrorImage = global::FacebookAppClient.Properties.Resources.No_Image_Available;
+            this.imageNormalPictureBox.Image = global::FacebookAppClient.Properties.Resources.No_Image_Available;
+            this.imageNormalPictureBox.InitialImage = global::FacebookAppClient.Properties.Resources.No_Image_Available;
             this.imageNormalPictureBox.Location = new System.Drawing.Point(249, 429);
             this.imageNormalPictureBox.Name = "imageNormalPictureBox";
             this.imageNormalPictureBox.Size = new System.Drawing.Size(290, 290);
@@ -505,9 +505,9 @@ namespace BasicFacebookFeatures
             // likedPageImagePicturebox
             // 
             this.likedPageImagePicturebox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.pageBindingSource, "ImageNormal", true));
-            this.likedPageImagePicturebox.ErrorImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
-            this.likedPageImagePicturebox.Image = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
-            this.likedPageImagePicturebox.InitialImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
+            this.likedPageImagePicturebox.ErrorImage = global::FacebookAppClient.Properties.Resources.No_Image_Available;
+            this.likedPageImagePicturebox.Image = global::FacebookAppClient.Properties.Resources.No_Image_Available;
+            this.likedPageImagePicturebox.InitialImage = global::FacebookAppClient.Properties.Resources.No_Image_Available;
             this.likedPageImagePicturebox.Location = new System.Drawing.Point(249, 414);
             this.likedPageImagePicturebox.Name = "likedPageImagePicturebox";
             this.likedPageImagePicturebox.Size = new System.Drawing.Size(300, 305);
@@ -584,9 +584,9 @@ namespace BasicFacebookFeatures
             // imageAlbumPictureBox
             // 
             this.imageAlbumPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.albumBindingSource, "ImageAlbum", true));
-            this.imageAlbumPictureBox.ErrorImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
-            this.imageAlbumPictureBox.Image = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
-            this.imageAlbumPictureBox.InitialImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
+            this.imageAlbumPictureBox.ErrorImage = global::FacebookAppClient.Properties.Resources.No_Image_Available;
+            this.imageAlbumPictureBox.Image = global::FacebookAppClient.Properties.Resources.No_Image_Available;
+            this.imageAlbumPictureBox.InitialImage = global::FacebookAppClient.Properties.Resources.No_Image_Available;
             this.imageAlbumPictureBox.Location = new System.Drawing.Point(249, 216);
             this.imageAlbumPictureBox.Name = "imageAlbumPictureBox";
             this.imageAlbumPictureBox.Size = new System.Drawing.Size(290, 290);
@@ -654,9 +654,9 @@ namespace BasicFacebookFeatures
             // 
             // postImagePictureBox
             // 
-            this.postImagePictureBox.ErrorImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
-            this.postImagePictureBox.Image = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
-            this.postImagePictureBox.InitialImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
+            this.postImagePictureBox.ErrorImage = global::FacebookAppClient.Properties.Resources.No_Image_Available;
+            this.postImagePictureBox.Image = global::FacebookAppClient.Properties.Resources.No_Image_Available;
+            this.postImagePictureBox.InitialImage = global::FacebookAppClient.Properties.Resources.No_Image_Available;
             this.postImagePictureBox.Location = new System.Drawing.Point(249, 429);
             this.postImagePictureBox.Name = "postImagePictureBox";
             this.postImagePictureBox.Size = new System.Drawing.Size(290, 290);
@@ -752,9 +752,9 @@ namespace BasicFacebookFeatures
             // taggedPicturesPicturebox
             // 
             this.taggedPicturesPicturebox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.photoBindingSource, "ImageNormal", true));
-            this.taggedPicturesPicturebox.ErrorImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
-            this.taggedPicturesPicturebox.Image = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
-            this.taggedPicturesPicturebox.InitialImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
+            this.taggedPicturesPicturebox.ErrorImage = global::FacebookAppClient.Properties.Resources.No_Image_Available;
+            this.taggedPicturesPicturebox.Image = global::FacebookAppClient.Properties.Resources.No_Image_Available;
+            this.taggedPicturesPicturebox.InitialImage = global::FacebookAppClient.Properties.Resources.No_Image_Available;
             this.taggedPicturesPicturebox.Location = new System.Drawing.Point(249, 429);
             this.taggedPicturesPicturebox.Name = "taggedPicturesPicturebox";
             this.taggedPicturesPicturebox.Size = new System.Drawing.Size(290, 290);
@@ -871,9 +871,9 @@ namespace BasicFacebookFeatures
             // eventImagePicturebox
             // 
             this.eventImagePicturebox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.eventBindingSource, "ImageNormal", true));
-            this.eventImagePicturebox.ErrorImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
-            this.eventImagePicturebox.Image = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
-            this.eventImagePicturebox.InitialImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
+            this.eventImagePicturebox.ErrorImage = global::FacebookAppClient.Properties.Resources.No_Image_Available;
+            this.eventImagePicturebox.Image = global::FacebookAppClient.Properties.Resources.No_Image_Available;
+            this.eventImagePicturebox.InitialImage = global::FacebookAppClient.Properties.Resources.No_Image_Available;
             this.eventImagePicturebox.Location = new System.Drawing.Point(249, 434);
             this.eventImagePicturebox.Name = "eventImagePicturebox";
             this.eventImagePicturebox.Size = new System.Drawing.Size(290, 290);
@@ -939,9 +939,9 @@ namespace BasicFacebookFeatures
             // friendImagePictureBox
             // 
             this.friendImagePictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.userBindingSource, "ImageLarge", true));
-            this.friendImagePictureBox.ErrorImage = global::BasicFacebookFeatures.Properties.Resources.Unknown_Profile_Picture;
-            this.friendImagePictureBox.Image = global::BasicFacebookFeatures.Properties.Resources.Unknown_Profile_Picture;
-            this.friendImagePictureBox.InitialImage = global::BasicFacebookFeatures.Properties.Resources.Unknown_Profile_Picture;
+            this.friendImagePictureBox.ErrorImage = global::FacebookAppClient.Properties.Resources.Unknown_Profile_Picture;
+            this.friendImagePictureBox.Image = global::FacebookAppClient.Properties.Resources.Unknown_Profile_Picture;
+            this.friendImagePictureBox.InitialImage = global::FacebookAppClient.Properties.Resources.Unknown_Profile_Picture;
             this.friendImagePictureBox.Location = new System.Drawing.Point(249, 119);
             this.friendImagePictureBox.Name = "friendImagePictureBox";
             this.friendImagePictureBox.Size = new System.Drawing.Size(290, 290);
@@ -1088,9 +1088,9 @@ namespace BasicFacebookFeatures
             // userImagePictureBox
             // 
             this.userImagePictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.userBindingSource, "ImageLarge", true));
-            this.userImagePictureBox.ErrorImage = global::BasicFacebookFeatures.Properties.Resources.Unknown_Profile_Picture;
-            this.userImagePictureBox.Image = global::BasicFacebookFeatures.Properties.Resources.Unknown_Profile_Picture;
-            this.userImagePictureBox.InitialImage = global::BasicFacebookFeatures.Properties.Resources.Unknown_Profile_Picture;
+            this.userImagePictureBox.ErrorImage = global::FacebookAppClient.Properties.Resources.Unknown_Profile_Picture;
+            this.userImagePictureBox.Image = global::FacebookAppClient.Properties.Resources.Unknown_Profile_Picture;
+            this.userImagePictureBox.InitialImage = global::FacebookAppClient.Properties.Resources.Unknown_Profile_Picture;
             this.userImagePictureBox.Location = new System.Drawing.Point(586, 239);
             this.userImagePictureBox.Name = "userImagePictureBox";
             this.userImagePictureBox.Size = new System.Drawing.Size(280, 280);
@@ -1119,7 +1119,7 @@ namespace BasicFacebookFeatures
             this.Controls.Add(this.ControlTabs);
             this.Font = new System.Drawing.Font("Franklin Gothic Medium", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = global::BasicFacebookFeatures.Properties.Resources.facebook_icon;
+            this.Icon = global::FacebookAppClient.Properties.Resources.facebook_icon;
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -4,12 +4,12 @@ using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
 using FacebookAppLogic;
 
-namespace BasicFacebookFeatures
+namespace FacebookAppClient
 {
     public partial class BestFriendForm : Form
     {
         private readonly AppManager r_FacebookAppManager = AppManager.Instance;
-        private KeyValuePair<FriendScore, User>? bestFriendAndScore = null;
+        private KeyValuePair<IFriendScore, User>? bestFriendAndScore = null;
 
         public BestFriendForm()
         {
@@ -21,8 +21,8 @@ namespace BasicFacebookFeatures
             try
             {
                 this.Text = "Facebook Best Friend - Calculating Best Friend Results";
-                FriendScoreComposer friendScoreComposer = new FriendScoreComposer(this.r_FacebookAppManager.LoggedInUser);
-                this.bestFriendAndScore = friendScoreComposer.ComposeFriendScoreResult();
+                FriendScoreCreator friendScoreCreator = new FriendScoreCreator(new HighestFriendScoreBuilder(), this.r_FacebookAppManager.LoggedInUser);
+                this.bestFriendAndScore = friendScoreCreator.ComposeFriendScoreResult();
                 this.populateBestFriendData();
                 this.Text = "Facebook DP App";
             }

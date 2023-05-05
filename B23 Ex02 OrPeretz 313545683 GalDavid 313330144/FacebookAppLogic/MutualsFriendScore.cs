@@ -1,6 +1,6 @@
 ﻿namespace FacebookAppLogic
 {
-    public class FriendScore
+    public class MutualsFriendScore : IFriendScore
     {
         public int Tags { get; set; } = 0;
 
@@ -10,9 +10,9 @@
 
         public int MutualFriends { get; set; } = 0;
 
-        public int MutualGroups { get; set; }
+        public int MutualGroups { get; set; } = 0;
 
-        public FriendScore()
+        public MutualsFriendScore()
         {
         }
 

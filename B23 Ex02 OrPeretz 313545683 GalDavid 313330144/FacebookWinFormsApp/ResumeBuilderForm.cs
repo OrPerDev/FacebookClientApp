@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
 using FacebookAppLogic;
 
-namespace BasicFacebookFeatures
+namespace FacebookAppClient
 {
     public partial class ResumeBuilderForm : Form
     {

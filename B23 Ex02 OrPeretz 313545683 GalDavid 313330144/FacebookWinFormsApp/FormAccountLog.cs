@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using FacebookAppLogic;
 
-namespace BasicFacebookFeatures
+namespace FacebookAppClient
 {
     public partial class FormAccountLog : Form
     {

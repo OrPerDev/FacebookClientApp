@@ -1,5 +1,5 @@
 ﻿
-namespace BasicFacebookFeatures
+namespace FacebookAppClient
 {
     partial class AlbumForm
     {
@@ -42,7 +42,7 @@ namespace BasicFacebookFeatures
             // 
             // LeftArrowPictureBox
             // 
-            this.LeftArrowPictureBox.Image = global::BasicFacebookFeatures.Properties.Resources.White_Left_Arrow;
+            this.LeftArrowPictureBox.Image = global::FacebookAppClient.Properties.Resources.White_Left_Arrow;
             this.LeftArrowPictureBox.Location = new System.Drawing.Point(12, 393);
             this.LeftArrowPictureBox.Name = "LeftArrowPictureBox";
             this.LeftArrowPictureBox.Size = new System.Drawing.Size(155, 60);
@@ -109,7 +109,7 @@ namespace BasicFacebookFeatures
             this.Controls.Add(this.RightArrowPictureBox);
             this.Controls.Add(this.CurrentPictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = global::BasicFacebookFeatures.Properties.Resources.facebook_icon;
+            this.Icon = global::FacebookAppClient.Properties.Resources.facebook_icon;
             this.MaximizeBox = false;
             this.Name = "AlbumForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;

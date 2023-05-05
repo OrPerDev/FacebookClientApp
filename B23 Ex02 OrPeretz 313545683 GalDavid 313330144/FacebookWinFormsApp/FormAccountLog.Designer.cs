@@ -1,5 +1,5 @@
 ﻿
-namespace BasicFacebookFeatures
+namespace FacebookAppClient
 {
     partial class FormAccountLog
     {
@@ -81,7 +81,7 @@ namespace BasicFacebookFeatures
             this.Controls.Add(this.UsersListBox);
             this.Controls.Add(this.LoginButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = global::BasicFacebookFeatures.Properties.Resources.facebook_icon;
+            this.Icon = global::FacebookAppClient.Properties.Resources.facebook_icon;
             this.MaximizeBox = false;
             this.Name = "FormAccountLog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

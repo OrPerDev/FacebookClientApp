@@ -1,5 +1,5 @@
 ﻿
-namespace BasicFacebookFeatures
+namespace FacebookAppClient
 {
     partial class BestFriendForm
     {
@@ -53,7 +53,7 @@ namespace BasicFacebookFeatures
             // 
             // FriendPictureBox
             // 
-            this.FriendPictureBox.Image = global::BasicFacebookFeatures.Properties.Resources.Unknown_Profile_Picture;
+            this.FriendPictureBox.Image = global::FacebookAppClient.Properties.Resources.Unknown_Profile_Picture;
             this.FriendPictureBox.Location = new System.Drawing.Point(12, 33);
             this.FriendPictureBox.Name = "FriendPictureBox";
             this.FriendPictureBox.Size = new System.Drawing.Size(250, 255);

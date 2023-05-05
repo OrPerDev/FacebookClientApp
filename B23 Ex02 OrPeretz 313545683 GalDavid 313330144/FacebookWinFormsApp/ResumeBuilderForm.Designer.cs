@@ -1,5 +1,5 @@
 ﻿
-namespace BasicFacebookFeatures
+namespace FacebookAppClient
 {
     partial class ResumeBuilderForm
     {

@@ -5,7 +5,7 @@ using System.Threading;
 using FacebookWrapper.ObjectModel;
 using FacebookAppLogic;
 
-namespace BasicFacebookFeatures
+namespace FacebookAppClient
 {
     public partial class FormMain : Form
     {

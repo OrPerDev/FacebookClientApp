@@ -44,7 +44,7 @@
     <Compile Include="AppSettings.cs" />
     <Compile Include="FacebookResumeBuilder.cs" />
     <Compile Include="FriendScore.cs" />
-    <Compile Include="FriendScoreCalculator.cs" />
+    <Compile Include="FriendScoreManager.cs" />
     <Compile Include="Singleton.cs" />
     <Compile Include="UserSerializationData.cs" />
   </ItemGroup>

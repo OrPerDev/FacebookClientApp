@@ -9,7 +9,7 @@ namespace BasicFacebookFeatures
     public partial class BestFriendForm : Form
     {
         private readonly AppManager r_FacebookAppManager = AppManager.Instance;
-        private KeyValuePair<int, User>? bestFriendAndScore = null;
+        private KeyValuePair<FriendScore, User>? bestFriendAndScore = null;
 
         public BestFriendForm()
         {
@@ -21,7 +21,8 @@ namespace BasicFacebookFeatures
             try
             {
                 this.Text = "Facebook Best Friend - Calculating Best Friend Results";
-                this.bestFriendAndScore = FriendScoreCalculator.GetHighestScoreFriend(this.r_FacebookAppManager.LoggedInUser);
+                FriendScoreComposer friendScoreComposer = new FriendScoreComposer(this.r_FacebookAppManager.LoggedInUser);
+                this.bestFriendAndScore = friendScoreComposer.ComposeFriendScoreResult();
                 this.populateBestFriendData();
                 this.Text = "Facebook DP App";
             }
@@ -37,7 +38,7 @@ namespace BasicFacebookFeatures
             if (bestFriendAndScore.Value.Value != null)
             {
                 string bestFriendInfo = r_FacebookAppManager.FetchUserInfo(bestFriendAndScore.Value.Value);
-                bestFriendInfo += $@"• Friend Score - {this.bestFriendAndScore.Value.Key}";
+                bestFriendInfo += $@"• Friend Score - {this.bestFriendAndScore.Value.Key.Score}";
                 this.FriendInfoTextBox.Text = bestFriendInfo;
                 this.FriendNameLabel.Text = this.bestFriendAndScore.Value.Value.Name;
                 string userProfilePictureURL = r_FacebookAppManager.FetchUserProfilePictureURL(this.bestFriendAndScore.Value.Value);

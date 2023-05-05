@@ -56,7 +56,6 @@ namespace BasicFacebookFeatures
             System.Windows.Forms.Label albumCreatedTimeLabel;
             System.Windows.Forms.Label albumMessageLabel;
             System.Windows.Forms.Label descriptionLabel2;
-            this.SwitchLogoutButton = new System.Windows.Forms.Button();
             this.GroupsTab = new System.Windows.Forms.TabPage();
             this.groupDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.groupBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -197,7 +196,7 @@ namespace BasicFacebookFeatures
             // categoryLabel
             // 
             categoryLabel.AutoSize = true;
-            categoryLabel.Location = new System.Drawing.Point(246, 277);
+            categoryLabel.Location = new System.Drawing.Point(246, 262);
             categoryLabel.Name = "categoryLabel";
             categoryLabel.Size = new System.Drawing.Size(53, 15);
             categoryLabel.TabIndex = 1;
@@ -206,7 +205,7 @@ namespace BasicFacebookFeatures
             // descriptionLabel1
             // 
             descriptionLabel1.AutoSize = true;
-            descriptionLabel1.Location = new System.Drawing.Point(246, 54);
+            descriptionLabel1.Location = new System.Drawing.Point(246, 45);
             descriptionLabel1.Name = "descriptionLabel1";
             descriptionLabel1.Size = new System.Drawing.Size(65, 15);
             descriptionLabel1.TabIndex = 3;
@@ -224,7 +223,7 @@ namespace BasicFacebookFeatures
             // phoneLabel
             // 
             phoneLabel.AutoSize = true;
-            phoneLabel.Location = new System.Drawing.Point(246, 324);
+            phoneLabel.Location = new System.Drawing.Point(246, 303);
             phoneLabel.Name = "phoneLabel";
             phoneLabel.Size = new System.Drawing.Size(41, 15);
             phoneLabel.TabIndex = 11;
@@ -387,19 +386,6 @@ namespace BasicFacebookFeatures
             descriptionLabel2.TabIndex = 1;
             descriptionLabel2.Text = "Description:";
             // 
-            // SwitchLogoutButton
-            // 
-            this.SwitchLogoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
-            this.SwitchLogoutButton.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SwitchLogoutButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.SwitchLogoutButton.Location = new System.Drawing.Point(587, 697);
-            this.SwitchLogoutButton.Name = "SwitchLogoutButton";
-            this.SwitchLogoutButton.Size = new System.Drawing.Size(280, 35);
-            this.SwitchLogoutButton.TabIndex = 52;
-            this.SwitchLogoutButton.Text = "Switch User / Logout";
-            this.SwitchLogoutButton.UseVisualStyleBackColor = false;
-            this.SwitchLogoutButton.Click += new System.EventHandler(this.SwitchLogoutButton_Click);
-            // 
             // GroupsTab
             // 
             this.GroupsTab.AutoScroll = true;
@@ -419,7 +405,7 @@ namespace BasicFacebookFeatures
             // 
             this.groupDescriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.groupBindingSource, "Description", true));
             this.groupDescriptionTextBox.Enabled = false;
-            this.groupDescriptionTextBox.Location = new System.Drawing.Point(246, 28);
+            this.groupDescriptionTextBox.Location = new System.Drawing.Point(249, 26);
             this.groupDescriptionTextBox.Multiline = true;
             this.groupDescriptionTextBox.Name = "groupDescriptionTextBox";
             this.groupDescriptionTextBox.ReadOnly = true;
@@ -436,7 +422,7 @@ namespace BasicFacebookFeatures
             this.imageNormalPictureBox.ErrorImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
             this.imageNormalPictureBox.Image = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
             this.imageNormalPictureBox.InitialImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
-            this.imageNormalPictureBox.Location = new System.Drawing.Point(246, 429);
+            this.imageNormalPictureBox.Location = new System.Drawing.Point(249, 429);
             this.imageNormalPictureBox.Name = "imageNormalPictureBox";
             this.imageNormalPictureBox.Size = new System.Drawing.Size(290, 290);
             this.imageNormalPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -501,7 +487,7 @@ namespace BasicFacebookFeatures
             // 
             this.categoryTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pageBindingSource, "Category", true));
             this.categoryTextBox.Enabled = false;
-            this.categoryTextBox.Location = new System.Drawing.Point(246, 295);
+            this.categoryTextBox.Location = new System.Drawing.Point(249, 280);
             this.categoryTextBox.Name = "categoryTextBox";
             this.categoryTextBox.Size = new System.Drawing.Size(290, 20);
             this.categoryTextBox.TabIndex = 2;
@@ -510,7 +496,7 @@ namespace BasicFacebookFeatures
             // 
             this.LikedPagesDescriptionTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pageBindingSource, "Description", true));
             this.LikedPagesDescriptionTextbox.Enabled = false;
-            this.LikedPagesDescriptionTextbox.Location = new System.Drawing.Point(246, 72);
+            this.LikedPagesDescriptionTextbox.Location = new System.Drawing.Point(249, 63);
             this.LikedPagesDescriptionTextbox.Multiline = true;
             this.LikedPagesDescriptionTextbox.Name = "LikedPagesDescriptionTextbox";
             this.LikedPagesDescriptionTextbox.Size = new System.Drawing.Size(290, 196);
@@ -522,7 +508,7 @@ namespace BasicFacebookFeatures
             this.likedPageImagePicturebox.ErrorImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
             this.likedPageImagePicturebox.Image = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
             this.likedPageImagePicturebox.InitialImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
-            this.likedPageImagePicturebox.Location = new System.Drawing.Point(246, 414);
+            this.likedPageImagePicturebox.Location = new System.Drawing.Point(249, 414);
             this.likedPageImagePicturebox.Name = "likedPageImagePicturebox";
             this.likedPageImagePicturebox.Size = new System.Drawing.Size(300, 305);
             this.likedPageImagePicturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -533,7 +519,7 @@ namespace BasicFacebookFeatures
             // 
             this.LikedPagesNameTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pageBindingSource, "Name", true));
             this.LikedPagesNameTextbox.Enabled = false;
-            this.LikedPagesNameTextbox.Location = new System.Drawing.Point(246, 28);
+            this.LikedPagesNameTextbox.Location = new System.Drawing.Point(249, 22);
             this.LikedPagesNameTextbox.Name = "LikedPagesNameTextbox";
             this.LikedPagesNameTextbox.ReadOnly = true;
             this.LikedPagesNameTextbox.Size = new System.Drawing.Size(290, 20);
@@ -543,7 +529,7 @@ namespace BasicFacebookFeatures
             // 
             this.phoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pageBindingSource, "Phone", true));
             this.phoneTextBox.Enabled = false;
-            this.phoneTextBox.Location = new System.Drawing.Point(246, 342);
+            this.phoneTextBox.Location = new System.Drawing.Point(249, 321);
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(290, 20);
             this.phoneTextBox.TabIndex = 12;
@@ -685,7 +671,7 @@ namespace BasicFacebookFeatures
             this.postCreatedTimeTextBox.Location = new System.Drawing.Point(249, 202);
             this.postCreatedTimeTextBox.Name = "postCreatedTimeTextBox";
             this.postCreatedTimeTextBox.ReadOnly = true;
-            this.postCreatedTimeTextBox.Size = new System.Drawing.Size(296, 20);
+            this.postCreatedTimeTextBox.Size = new System.Drawing.Size(290, 20);
             this.postCreatedTimeTextBox.TabIndex = 2;
             // 
             // postBindingSource
@@ -698,7 +684,7 @@ namespace BasicFacebookFeatures
             this.linkLinkLabel.LinkColor = System.Drawing.SystemColors.ButtonFace;
             this.linkLinkLabel.Location = new System.Drawing.Point(246, 240);
             this.linkLinkLabel.Name = "linkLinkLabel";
-            this.linkLinkLabel.Size = new System.Drawing.Size(296, 23);
+            this.linkLinkLabel.Size = new System.Drawing.Size(290, 23);
             this.linkLinkLabel.TabIndex = 6;
             this.linkLinkLabel.TabStop = true;
             this.linkLinkLabel.Text = "linkLabel1";
@@ -711,7 +697,7 @@ namespace BasicFacebookFeatures
             this.postMessageTextBox.Multiline = true;
             this.postMessageTextBox.Name = "postMessageTextBox";
             this.postMessageTextBox.ReadOnly = true;
-            this.postMessageTextBox.Size = new System.Drawing.Size(296, 153);
+            this.postMessageTextBox.Size = new System.Drawing.Size(290, 153);
             this.postMessageTextBox.TabIndex = 8;
             // 
             // FeedListBox
@@ -744,7 +730,6 @@ namespace BasicFacebookFeatures
             this.ControlTabs.SelectedIndex = 0;
             this.ControlTabs.Size = new System.Drawing.Size(573, 776);
             this.ControlTabs.TabIndex = 53;
-            this.ControlTabs.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.ControlTabs_Selecting);
             // 
             // TaggedPicturesTab
             // 
@@ -770,7 +755,7 @@ namespace BasicFacebookFeatures
             this.taggedPicturesPicturebox.ErrorImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
             this.taggedPicturesPicturebox.Image = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
             this.taggedPicturesPicturebox.InitialImage = global::BasicFacebookFeatures.Properties.Resources.No_Image_Available;
-            this.taggedPicturesPicturebox.Location = new System.Drawing.Point(246, 429);
+            this.taggedPicturesPicturebox.Location = new System.Drawing.Point(249, 429);
             this.taggedPicturesPicturebox.Name = "taggedPicturesPicturebox";
             this.taggedPicturesPicturebox.Size = new System.Drawing.Size(290, 290);
             this.taggedPicturesPicturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -797,7 +782,7 @@ namespace BasicFacebookFeatures
             // 
             this.messageTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.photoBindingSource, "Message", true));
             this.messageTextBox.Enabled = false;
-            this.messageTextBox.Location = new System.Drawing.Point(246, 24);
+            this.messageTextBox.Location = new System.Drawing.Point(249, 24);
             this.messageTextBox.Multiline = true;
             this.messageTextBox.Name = "messageTextBox";
             this.messageTextBox.ReadOnly = true;
@@ -849,7 +834,7 @@ namespace BasicFacebookFeatures
             this.ticketsURILinkLabel.LinkColor = System.Drawing.SystemColors.ButtonFace;
             this.ticketsURILinkLabel.Location = new System.Drawing.Point(250, 359);
             this.ticketsURILinkLabel.Name = "ticketsURILinkLabel";
-            this.ticketsURILinkLabel.Size = new System.Drawing.Size(289, 23);
+            this.ticketsURILinkLabel.Size = new System.Drawing.Size(290, 23);
             this.ticketsURILinkLabel.TabIndex = 13;
             this.ticketsURILinkLabel.TabStop = true;
             this.ticketsURILinkLabel.Text = "linkLabel1";
@@ -865,7 +850,7 @@ namespace BasicFacebookFeatures
             this.linkToFacebookLinkLabel.LinkColor = System.Drawing.SystemColors.ButtonFace;
             this.linkToFacebookLinkLabel.Location = new System.Drawing.Point(249, 321);
             this.linkToFacebookLinkLabel.Name = "linkToFacebookLinkLabel";
-            this.linkToFacebookLinkLabel.Size = new System.Drawing.Size(296, 23);
+            this.linkToFacebookLinkLabel.Size = new System.Drawing.Size(290, 23);
             this.linkToFacebookLinkLabel.TabIndex = 12;
             this.linkToFacebookLinkLabel.TabStop = true;
             this.linkToFacebookLinkLabel.Text = "linkLabel1";
@@ -880,7 +865,7 @@ namespace BasicFacebookFeatures
             this.eventDescriptionTextBox.Multiline = true;
             this.eventDescriptionTextBox.Name = "eventDescriptionTextBox";
             this.eventDescriptionTextBox.ReadOnly = true;
-            this.eventDescriptionTextBox.Size = new System.Drawing.Size(296, 179);
+            this.eventDescriptionTextBox.Size = new System.Drawing.Size(290, 179);
             this.eventDescriptionTextBox.TabIndex = 3;
             // 
             // eventImagePicturebox
@@ -904,7 +889,7 @@ namespace BasicFacebookFeatures
             this.eventLocationTextBox.Multiline = true;
             this.eventLocationTextBox.Name = "eventLocationTextBox";
             this.eventLocationTextBox.ReadOnly = true;
-            this.eventLocationTextBox.Size = new System.Drawing.Size(296, 22);
+            this.eventLocationTextBox.Size = new System.Drawing.Size(290, 22);
             this.eventLocationTextBox.TabIndex = 9;
             // 
             // eventNameTextBox
@@ -915,7 +900,7 @@ namespace BasicFacebookFeatures
             this.eventNameTextBox.Multiline = true;
             this.eventNameTextBox.Name = "eventNameTextBox";
             this.eventNameTextBox.ReadOnly = true;
-            this.eventNameTextBox.Size = new System.Drawing.Size(296, 22);
+            this.eventNameTextBox.Size = new System.Drawing.Size(290, 22);
             this.eventNameTextBox.TabIndex = 11;
             // 
             // EventsListBox
@@ -1026,9 +1011,9 @@ namespace BasicFacebookFeatures
             this.PostStatusButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
             this.PostStatusButton.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PostStatusButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.PostStatusButton.Location = new System.Drawing.Point(586, 656);
+            this.PostStatusButton.Location = new System.Drawing.Point(587, 656);
             this.PostStatusButton.Name = "PostStatusButton";
-            this.PostStatusButton.Size = new System.Drawing.Size(280, 35);
+            this.PostStatusButton.Size = new System.Drawing.Size(280, 55);
             this.PostStatusButton.TabIndex = 57;
             this.PostStatusButton.Text = "Post Status";
             this.PostStatusButton.UseVisualStyleBackColor = false;
@@ -1048,9 +1033,9 @@ namespace BasicFacebookFeatures
             this.ResumeBuilderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
             this.ResumeBuilderButton.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResumeBuilderButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.ResumeBuilderButton.Location = new System.Drawing.Point(587, 740);
+            this.ResumeBuilderButton.Location = new System.Drawing.Point(587, 717);
             this.ResumeBuilderButton.Name = "ResumeBuilderButton";
-            this.ResumeBuilderButton.Size = new System.Drawing.Size(280, 35);
+            this.ResumeBuilderButton.Size = new System.Drawing.Size(280, 55);
             this.ResumeBuilderButton.TabIndex = 59;
             this.ResumeBuilderButton.Text = "Facebook Resume Builder";
             this.ResumeBuilderButton.UseVisualStyleBackColor = false;
@@ -1132,7 +1117,6 @@ namespace BasicFacebookFeatures
             this.Controls.Add(this.StatusRichTextBox);
             this.Controls.Add(this.PostStatusButton);
             this.Controls.Add(this.ControlTabs);
-            this.Controls.Add(this.SwitchLogoutButton);
             this.Font = new System.Drawing.Font("Franklin Gothic Medium", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = global::BasicFacebookFeatures.Properties.Resources.facebook_icon;
@@ -1177,7 +1161,6 @@ namespace BasicFacebookFeatures
         }
 
 		#endregion
-		private System.Windows.Forms.Button SwitchLogoutButton;
         private System.Windows.Forms.TabPage GroupsTab;
         private System.Windows.Forms.TabPage LikedPagesTab;
         private System.Windows.Forms.TabPage AlbumsTab;

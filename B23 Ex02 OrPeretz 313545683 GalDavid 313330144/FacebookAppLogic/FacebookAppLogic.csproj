@@ -43,6 +43,8 @@
     <Compile Include="AppManager.cs" />
     <Compile Include="AppSettings.cs" />
     <Compile Include="FacebookResumeBuilder.cs" />
+    <Compile Include="FacebookResumeUser.cs" />
+    <Compile Include="IFacebookResumeUser.cs" />
     <Compile Include="MutualsFriendScore.cs" />
     <Compile Include="HighestFriendScoreBuilder.cs" />
     <Compile Include="IFriendScore.cs" />

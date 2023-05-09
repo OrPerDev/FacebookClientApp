@@ -1,17 +1,29 @@
 ﻿using System;
 using System.Text;
 using FacebookWrapper.ObjectModel;
+using System.Reflection;
+using System.Collections.Generic;
 
 namespace FacebookAppLogic
 {
     public static class FacebookResumeBuilder
     {
-        public static string GenerateUserResume(User o_CurrentUser)
+        public static string GenerateUserResume(FacebookResumeUser o_CurrentUser)
         {
             StringBuilder resumeText = new StringBuilder();
             try
             {
                 resumeText.AppendLine(generateUserPersonaInformation(o_CurrentUser));
+            }
+            catch (Exception)
+            {
+                goto Introduction;
+            }
+
+        Introduction:
+            try
+            {
+                resumeText.AppendLine(generateUserResumeIntro(o_CurrentUser));
             }
             catch (Exception)
             {
@@ -35,6 +47,16 @@ namespace FacebookAppLogic
             }
             catch (Exception)
             {
+                goto OtherProperties;
+            }
+
+        OtherProperties:
+            try
+            {
+                resumeText.AppendLine(generateProxyResumeUserPropeties(o_CurrentUser));
+            }
+            catch (Exception)
+            {
                 goto Return;
             }
 
@@ -42,24 +64,25 @@ namespace FacebookAppLogic
             return resumeText.ToString();
         }
 
-        private static string generateUserPersonaInformation(User i_CurrentUser)
+        private static string generateUserPersonaInformation(FacebookResumeUser i_CurrentUser)
         {
             StringBuilder personalText = new StringBuilder();
-            personalText.AppendLine($"{new string(' ', 20)}{i_CurrentUser.Name}");
-            personalText.AppendLine($"Email - {i_CurrentUser.Email}");
-            personalText.AppendLine($"Location - {i_CurrentUser.Location.ToString()}");
-            personalText.AppendLine($"Birthday - {i_CurrentUser.Birthday}");
+            personalText.AppendLine($"{new string(' ', 20)}{i_CurrentUser.FacebookUser.Name}");
+            personalText.AppendLine($"Email - {i_CurrentUser.FacebookUser.Email}");
+            personalText.AppendLine($"Location - {i_CurrentUser.FacebookUser.Location.Name}");
+            personalText.AppendLine($"Birthday - {i_CurrentUser.FacebookUser.Birthday}");
             return personalText.ToString();
         }
 
-        private static string generateUserWorkExperience(User i_CurrentUser)
+        private static string generateUserWorkExperience(FacebookResumeUser i_CurrentUser)
         {
             StringBuilder workExperienceText = new StringBuilder();
-            WorkExperience[] workExperiences = i_CurrentUser.WorkExperiences;
-            workExperienceText.AppendLine($"{new string('-', 20)}Work Experience{new string('-', 20)}");
+            WorkExperience[] workExperiences = i_CurrentUser.FacebookUser.WorkExperiences;
+            workExperienceText.AppendLine($"{new string(' ', 20)}Work Experience");
+            workExperienceText.AppendLine(addSectionUnderline());
             if (workExperiences == null)
             {
-                workExperienceText.AppendLine("No work experience to be displayed");
+                workExperienceText.AppendLine("No Work Experience to be displayed.");
             }
             else
             {
@@ -68,25 +91,26 @@ namespace FacebookAppLogic
                     workExperienceText.AppendLine($"• Job Title - {experience.Position.Name}");
                     workExperienceText.AppendLine($"• Employer - {experience.Employer.Name}, {experience.StartDate.ToString()} - {experience.EndDate.ToString()}");
                     workExperienceText.AppendLine($"• Description - {experience.Description}");
-                    workExperienceText.AppendLine($"{new string('-', 50)}");
+                    workExperienceText.AppendLine($"{new string('-', 100)}");
                 }
             }
 
             return workExperienceText.ToString();
         }
 
-        private static string generateUserEducations(User i_CurrentUser)
+        private static string generateUserEducations(FacebookResumeUser i_CurrentUser)
         {
             StringBuilder educationText = new StringBuilder();
-            Education[] educations = i_CurrentUser.Educations;
-            educationText.AppendLine($"{new string('-', 26)}Education{new string('-', 26)}");
+            Education[] educations = i_CurrentUser.FacebookUser.Educations;
+            educationText.AppendLine($"{new string(' ', 20)}Education");
+            educationText.AppendLine(addSectionUnderline());
             if (educations == null)
             {
-                educationText.AppendLine("No Education to be displayed");
+                educationText.AppendLine("No Education to be displayed.");
             }
             else
             {
-                foreach (Education education in i_CurrentUser.Educations)
+                foreach (Education education in i_CurrentUser.FacebookUser.Educations)
                 {
                     educationText.AppendLine($"• Degree - {education.Degree}");
                     educationText.AppendLine($"• Academic institution - {education.School}, {education.Year.Name}");
@@ -97,11 +121,60 @@ namespace FacebookAppLogic
                         educationText.AppendLine($" • {concetration.Name}");
                     }
 
-                    educationText.AppendLine($"{new string('-', 50)}");
+                    educationText.AppendLine($"{new string('-', 100)}");
                 }
             }
 
             return educationText.ToString();
+        }
+
+        private static string generateUserResumeIntro(FacebookResumeUser i_CurrentUser)
+        {
+            StringBuilder introTextBuilder = new StringBuilder();
+            introTextBuilder.AppendLine($"{new string(' ', 20)}Introduction");
+            introTextBuilder.AppendLine(addSectionUnderline());
+            if (string.IsNullOrEmpty(i_CurrentUser.Introduction))
+            {
+                introTextBuilder.AppendLine("No Introduction to be displayed.");
+            }
+            else
+            {
+                introTextBuilder.AppendLine(i_CurrentUser.Introduction);
+            }
+            introTextBuilder.AppendLine();
+            return introTextBuilder.ToString();
+        }
+
+        private static string generateProxyResumeUserPropeties(FacebookResumeUser i_CurrentUser)
+        {
+            StringBuilder propertiesTexts = new StringBuilder();
+            foreach (PropertyInfo propertyInfo in i_CurrentUser.GetType().GetProperties())
+            {
+                if (propertyInfo.PropertyType == typeof(List<string>))
+                {
+                    propertiesTexts.AppendLine($"{new string(' ', 20)}{propertyInfo.Name}");
+                    propertiesTexts.AppendLine(addSectionUnderline());
+                    List<string> currentPropertyList = propertyInfo.GetValue(i_CurrentUser) as List<string>;
+                    if (currentPropertyList == null || currentPropertyList.Count == 0)
+                    {
+                        propertiesTexts.AppendLine($"No {propertyInfo.Name} to be displayed.");
+                    }
+                    else
+                    {
+                        foreach (string textInPropertyValue in currentPropertyList)
+                        {
+                            propertiesTexts.AppendLine($"- {textInPropertyValue}");
+                        }
+                    }
+                    propertiesTexts.AppendLine();
+                }
+            }  
+            return propertiesTexts.ToString();
+        }
+
+        private static string addSectionUnderline()
+        {
+            return new string('-', 100);
         }
     }
 }

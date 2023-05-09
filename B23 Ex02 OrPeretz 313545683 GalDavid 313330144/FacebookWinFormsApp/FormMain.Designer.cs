@@ -688,6 +688,7 @@ namespace FacebookAppClient
             this.linkLinkLabel.TabIndex = 6;
             this.linkLinkLabel.TabStop = true;
             this.linkLinkLabel.Text = "linkLabel1";
+            this.linkLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.general_LinkClicked);
             // 
             // postMessageTextBox
             // 

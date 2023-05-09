@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace FacebookAppLogic
 {
     public interface IFacebookResumeUser
     {
-        string ResumeIntroduction { get; }
+        string Introduction { get; set; }
         List<string> Achievements { get; }
         List<string> Hobbies { get; }
         List<string> Certifications { get; }

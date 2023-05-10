@@ -97,9 +97,8 @@ namespace FacebookAppClient
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Facebook DP App - Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "Facebook DP App - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void removeBindingsFromLoggedUserComponents()
@@ -108,7 +107,7 @@ namespace FacebookAppClient
             this.userBirthdayTextbox.DataBindings.Clear();
             this.userCityTextBox.DataBindings.Clear();
             this.userImagePictureBox.DataBindings.Clear();
-            this.userEmailTextBox.DataBindings.Clear();  
+            this.userEmailTextBox.DataBindings.Clear();
         }
 
         private void GoToAlbumButton_Click(object sender, EventArgs e)

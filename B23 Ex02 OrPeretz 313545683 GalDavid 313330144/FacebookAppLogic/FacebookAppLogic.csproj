@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="AppManager.cs" />
     <Compile Include="AppSettings.cs" />
-    <Compile Include="FacebookResumeBuilder.cs" />
+    <Compile Include="FacebookResumeGenerator.cs" />
     <Compile Include="FacebookResumeUser.cs" />
     <Compile Include="IFacebookResumeUser.cs" />
     <Compile Include="MutualsFriendScore.cs" />

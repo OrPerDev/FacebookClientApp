@@ -9,7 +9,10 @@ namespace FacebookAppLogic
     public sealed class HighestFriendScoreBuilder : IFriendScoreBuilder
     {
         private IFriendScore m_FriendScore = new MutualsFriendScore();
-        public HighestFriendScoreBuilder() {}
+
+        public HighestFriendScoreBuilder()
+        {
+        }
 
         public KeyValuePair<IFriendScore, User> GetFriendScoreAndFriend(User io_CurrentUser)
         {
@@ -17,6 +20,7 @@ namespace FacebookAppLogic
             {
                 throw new Exception("No User is set to check for friends.");
             }
+
             IFriendScore highestFriendScore = new MutualsFriendScore();
             User highestScoreFriend = null;
             foreach (User friend in io_CurrentUser.Friends)
@@ -28,6 +32,7 @@ namespace FacebookAppLogic
                     highestScoreFriend = friend;
                 }
             }
+
             return new KeyValuePair<IFriendScore, User>(highestFriendScore, highestScoreFriend);
         }
 
@@ -48,7 +53,7 @@ namespace FacebookAppLogic
             return this.m_FriendScore.Score;
         }
 
-        private void fetchFriendsLikesCommentsTagsFromPosts(MutualsFriendScore i_CurrentFriendScore, User i_CurrentUser , string i_CurrentFriendName)
+        private void fetchFriendsLikesCommentsTagsFromPosts(MutualsFriendScore i_CurrentFriendScore, User i_CurrentUser, string i_CurrentFriendName)
         {
             try
             {

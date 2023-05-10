@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Text;
-using FacebookWrapper.ObjectModel;
 using System.Reflection;
 using System.Collections.Generic;
+using FacebookWrapper.ObjectModel;
 
 namespace FacebookAppLogic
 {
-    public static class FacebookResumeBuilder
+    public static class FacebookResumeGenerator
     {
         public static string GenerateUserResume(FacebookResumeUser o_CurrentUser)
         {
@@ -141,6 +141,7 @@ namespace FacebookAppLogic
             {
                 introTextBuilder.AppendLine(i_CurrentUser.Introduction);
             }
+
             introTextBuilder.AppendLine();
             return introTextBuilder.ToString();
         }
@@ -166,9 +167,11 @@ namespace FacebookAppLogic
                             propertiesTexts.AppendLine($"- {textInPropertyValue}");
                         }
                     }
+
                     propertiesTexts.AppendLine();
                 }
-            }  
+            }
+
             return propertiesTexts.ToString();
         }
 

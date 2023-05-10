@@ -17,6 +17,7 @@ namespace FacebookAppClient
             {
                 throw new Exception("The album has no pictures in it!");
             }
+
             this.r_AlbumToDisplay = i_AlbumToDisplay;
             this.r_AlbumPhotos = i_AlbumToDisplay.Photos;
             InitializeComponent();

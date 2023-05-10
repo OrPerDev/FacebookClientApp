@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FacebookAppLogic
+﻿namespace FacebookAppLogic
 {
     public interface IFriendScore
     {
         int Score { get; }
+
         void ResetScore();
     }
 }

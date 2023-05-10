@@ -5,10 +5,12 @@ namespace FacebookAppLogic
 {
     public sealed class Singleton<T>
     {
-        private static T s_Instance;
         private static readonly object sr_lock = new object();
+        private static T s_Instance;
+
         static Singleton()
-        { }
+        {
+        }
 
         public static T Instance
         {

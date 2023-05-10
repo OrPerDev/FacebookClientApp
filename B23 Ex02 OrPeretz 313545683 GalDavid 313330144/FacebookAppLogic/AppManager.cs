@@ -132,8 +132,7 @@ namespace FacebookAppLogic
                 "page_events",
                 "pages_read_user_content",
                 "publish_to_groups",
-                "pages_manage_posts"
-                );
+                "pages_manage_posts");
         }
 
         public void LogoutFromFacebook(string io_AccessToken)

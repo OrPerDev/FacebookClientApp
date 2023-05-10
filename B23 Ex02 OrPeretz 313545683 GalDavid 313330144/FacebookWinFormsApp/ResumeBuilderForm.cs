@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
-using FacebookWrapper.ObjectModel;
-using FacebookAppLogic;
 using System.Reflection;
 using System.Collections.Generic;
+using FacebookWrapper.ObjectModel;
+using FacebookAppLogic;
 
 namespace FacebookAppClient
 {
@@ -34,7 +34,7 @@ namespace FacebookAppClient
             try
             {
                 this.Text = "Facebook Resume Builder - Generating resume";
-                this.ResumeTextBox.Text = FacebookResumeBuilder.GenerateUserResume(this.r_CurrentUser);
+                this.ResumeTextBox.Text = FacebookResumeGenerator.GenerateUserResume(this.r_CurrentUser);
                 this.Text = "Facebook Resume Builder";
             }
             catch (Exception ex)
@@ -56,7 +56,7 @@ namespace FacebookAppClient
                     if (!string.IsNullOrEmpty(this.InfoAddTextBox.Text))
                     {
                         listProperty.Add(this.InfoAddTextBox.Text);
-                        this.ResumeTextBox.Text = FacebookResumeBuilder.GenerateUserResume(this.r_CurrentUser);
+                        this.ResumeTextBox.Text = FacebookResumeGenerator.GenerateUserResume(this.r_CurrentUser);
                     }
                     else
                     {
@@ -70,9 +70,7 @@ namespace FacebookAppClient
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message, "Facebook Resume Builder - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
 
@@ -83,7 +81,7 @@ namespace FacebookAppClient
                 if (!string.IsNullOrEmpty(this.IntroductionTextBox.Text))
                 {
                     this.r_CurrentUser.Introduction = this.IntroductionTextBox.Text;
-                    this.ResumeTextBox.Text = FacebookResumeBuilder.GenerateUserResume(this.r_CurrentUser);
+                    this.ResumeTextBox.Text = FacebookResumeGenerator.GenerateUserResume(this.r_CurrentUser);
                 }
                 else
                 {
@@ -94,7 +92,6 @@ namespace FacebookAppClient
             {
                 MessageBox.Show(ex.Message, "Facebook Resume Builder - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
     }
 }

@@ -9,7 +9,7 @@ namespace FacebookAppClient
     public partial class BestFriendForm : Form
     {
         private readonly AppManager r_FacebookAppManager = AppManager.Instance;
-        private KeyValuePair<IFriendScore, User>? bestFriendAndScore = null;
+        private KeyValuePair<IFriendScore, User>? m_BestFriendAndScore = null;
 
         public BestFriendForm()
         {
@@ -22,7 +22,7 @@ namespace FacebookAppClient
             {
                 this.Text = "Facebook Best Friend - Calculating Best Friend Results";
                 FriendScoreCreator friendScoreCreator = new FriendScoreCreator(new HighestFriendScoreBuilder(), this.r_FacebookAppManager.LoggedInUser);
-                this.bestFriendAndScore = friendScoreCreator.ComposeFriendScoreResult();
+                this.m_BestFriendAndScore = friendScoreCreator.ComposeFriendScoreResult();
                 this.populateBestFriendData();
                 this.Text = "Facebook DP App";
             }
@@ -35,16 +35,16 @@ namespace FacebookAppClient
 
         private void populateBestFriendData()
         {
-            if (bestFriendAndScore.Value.Value != null)
+            if (m_BestFriendAndScore.Value.Value != null)
             {
-                string bestFriendInfo = r_FacebookAppManager.FetchUserInfo(bestFriendAndScore.Value.Value);
-                bestFriendInfo += $@"• Friend Score - {this.bestFriendAndScore.Value.Key.Score}";
+                string bestFriendInfo = r_FacebookAppManager.FetchUserInfo(m_BestFriendAndScore.Value.Value);
+                bestFriendInfo += $@"• Friend Score - {this.m_BestFriendAndScore.Value.Key.Score}";
                 this.FriendInfoTextBox.Text = bestFriendInfo;
-                this.FriendNameLabel.Text = this.bestFriendAndScore.Value.Value.Name;
-                string userProfilePictureURL = r_FacebookAppManager.FetchUserProfilePictureURL(this.bestFriendAndScore.Value.Value);
+                this.FriendNameLabel.Text = this.m_BestFriendAndScore.Value.Value.Name;
+                string userProfilePictureURL = r_FacebookAppManager.FetchUserProfilePictureURL(this.m_BestFriendAndScore.Value.Value);
                 if (!string.IsNullOrEmpty(userProfilePictureURL))
                 {
-                    this.FriendPictureBox.LoadAsync(this.bestFriendAndScore.Value.Value.PictureLargeURL);
+                    this.FriendPictureBox.LoadAsync(this.m_BestFriendAndScore.Value.Value.PictureLargeURL);
                 }
                 else
                 {
@@ -66,7 +66,7 @@ namespace FacebookAppClient
         {
             try
             {
-                System.Diagnostics.Process.Start(this.bestFriendAndScore.Value.Value.Link);
+                System.Diagnostics.Process.Start(this.m_BestFriendAndScore.Value.Value.Link);
             }
             catch (Exception ex)
             {

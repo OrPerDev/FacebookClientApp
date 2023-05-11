@@ -53,7 +53,7 @@ namespace FacebookAppLogic
         OtherProperties:
             try
             {
-                resumeText.AppendLine(generateProxyResumeUserPropeties(o_CurrentUser));
+                resumeText.AppendLine(generateProxyResumeUserProperties(o_CurrentUser));
             }
             catch (Exception)
             {
@@ -146,7 +146,7 @@ namespace FacebookAppLogic
             return introTextBuilder.ToString();
         }
 
-        private static string generateProxyResumeUserPropeties(FacebookResumeUser i_CurrentUser)
+        private static string generateProxyResumeUserProperties(FacebookResumeUser i_CurrentUser)
         {
             StringBuilder propertiesTexts = new StringBuilder();
             foreach (PropertyInfo propertyInfo in i_CurrentUser.GetType().GetProperties())

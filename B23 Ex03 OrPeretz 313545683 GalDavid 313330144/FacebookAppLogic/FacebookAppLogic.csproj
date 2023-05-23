@@ -45,7 +45,9 @@
     <Compile Include="FacebookResumeGenerator.cs" />
     <Compile Include="FacebookResumeUser.cs" />
     <Compile Include="FacebookUserFilter.cs" />
+    <Compile Include="FriendHighestScoreCalculator.cs" />
     <Compile Include="IFacebookResumeUser.cs" />
+    <Compile Include="IFriendScoreCalculator.cs" />
     <Compile Include="MutualsFriendScore.cs" />
     <Compile Include="HighestFriendScoreBuilder.cs" />
     <Compile Include="IFriendScore.cs" />

@@ -11,6 +11,7 @@ namespace FacebookAppLogic
         public FriendHighestScoreCalculator()
         {
         }
+
         public int calculateFriendScore(User io_CurrentUser, User io_CurrentFriend, IFriendScore io_FriendScore)
         {
             Thread fetchPostsScoreThread = new Thread(() => fetchFriendsLikesCommentsTagsFromPosts((FriendMutualsScore)io_FriendScore, io_CurrentUser, io_CurrentFriend.Name));

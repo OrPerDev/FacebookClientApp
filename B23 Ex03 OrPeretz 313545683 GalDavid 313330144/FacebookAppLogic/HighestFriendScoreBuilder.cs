@@ -8,6 +8,7 @@ namespace FacebookAppLogic
     {
         private IFriendScore m_FriendScore = new FriendMutualsScore();
         private IFriendScoreCalculator m_FriendScoreCalculator = new FriendHighestScoreCalculator();
+
         public HighestFriendScoreBuilder()
         {
         }

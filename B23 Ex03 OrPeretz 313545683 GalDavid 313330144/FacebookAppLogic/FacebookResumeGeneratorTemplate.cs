@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace FacebookAppLogic
 {
@@ -63,11 +60,15 @@ namespace FacebookAppLogic
         Return:
             return resumeText.ToString();
         }
-        protected abstract string generateUserResumeAbout(FacebookResumeUser i_CurrentUser);
-        protected abstract string generateProxyResumeUserProperties(FacebookResumeUser i_CurrentUser);
-        protected abstract string generateUserEducations(FacebookResumeUser i_CurrentUser);
-        protected abstract string generateUserWorkExperience(FacebookResumeUser i_CurrentUser);
-        protected abstract string generateUserPersonaInformation(FacebookResumeUser i_CurrentUser);
 
+        protected abstract string generateUserResumeAbout(FacebookResumeUser i_CurrentUser);
+
+        protected abstract string generateProxyResumeUserProperties(FacebookResumeUser i_CurrentUser);
+
+        protected abstract string generateUserEducations(FacebookResumeUser i_CurrentUser);
+
+        protected abstract string generateUserWorkExperience(FacebookResumeUser i_CurrentUser);
+
+        protected abstract string generateUserPersonaInformation(FacebookResumeUser i_CurrentUser);
     }
 }

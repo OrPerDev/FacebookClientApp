@@ -6,65 +6,9 @@ using FacebookWrapper.ObjectModel;
 
 namespace FacebookAppLogic
 {
-    public static class FacebookResumeGenerator
+    public class FacebookResumeGenerator : FacebookResumeGeneratorTemplate
     {
-        public static string GenerateUserResume(FacebookResumeUser o_CurrentUser)
-        {
-            StringBuilder resumeText = new StringBuilder();
-            try
-            {
-                resumeText.AppendLine(generateUserPersonaInformation(o_CurrentUser));
-            }
-            catch (Exception)
-            {
-                goto Introduction;
-            }
-
-        Introduction:
-            try
-            {
-                resumeText.AppendLine(generateUserResumeIntro(o_CurrentUser));
-            }
-            catch (Exception)
-            {
-                goto WorkExperience;
-            }
-
-        WorkExperience:
-            try
-            {
-                resumeText.AppendLine(generateUserWorkExperience(o_CurrentUser));
-            }
-            catch (Exception)
-            {
-                goto Educations;
-            }
-
-        Educations:
-            try
-            {
-                resumeText.AppendLine(generateUserEducations(o_CurrentUser));
-            }
-            catch (Exception)
-            {
-                goto OtherProperties;
-            }
-
-        OtherProperties:
-            try
-            {
-                resumeText.AppendLine(generateProxyResumeUserProperties(o_CurrentUser));
-            }
-            catch (Exception)
-            {
-                goto Return;
-            }
-
-        Return:
-            return resumeText.ToString();
-        }
-
-        private static string generateUserPersonaInformation(FacebookResumeUser i_CurrentUser)
+        protected override string generateUserPersonaInformation(FacebookResumeUser i_CurrentUser)
         {
             StringBuilder personalText = new StringBuilder();
             personalText.AppendLine($"{new string(' ', 20)}{i_CurrentUser.FacebookUser.Name}");
@@ -74,7 +18,7 @@ namespace FacebookAppLogic
             return personalText.ToString();
         }
 
-        private static string generateUserWorkExperience(FacebookResumeUser i_CurrentUser)
+        protected override string generateUserWorkExperience(FacebookResumeUser i_CurrentUser)
         {
             StringBuilder workExperienceText = new StringBuilder();
             WorkExperience[] workExperiences = i_CurrentUser.FacebookUser.WorkExperiences;
@@ -98,7 +42,7 @@ namespace FacebookAppLogic
             return workExperienceText.ToString();
         }
 
-        private static string generateUserEducations(FacebookResumeUser i_CurrentUser)
+        protected override string generateUserEducations(FacebookResumeUser i_CurrentUser)
         {
             StringBuilder educationText = new StringBuilder();
             Education[] educations = i_CurrentUser.FacebookUser.Educations;
@@ -128,25 +72,25 @@ namespace FacebookAppLogic
             return educationText.ToString();
         }
 
-        private static string generateUserResumeIntro(FacebookResumeUser i_CurrentUser)
+        protected override string generateUserResumeAbout(FacebookResumeUser i_CurrentUser)
         {
             StringBuilder introTextBuilder = new StringBuilder();
-            introTextBuilder.AppendLine($"{new string(' ', 20)}Introduction");
+            introTextBuilder.AppendLine($"{new string(' ', 20)}About Myself");
             introTextBuilder.AppendLine(addSectionUnderline());
-            if (string.IsNullOrEmpty(i_CurrentUser.Introduction))
+            if (string.IsNullOrEmpty(i_CurrentUser.About))
             {
-                introTextBuilder.AppendLine("No Introduction to be displayed.");
+                introTextBuilder.AppendLine("No About to be displayed.");
             }
             else
             {
-                introTextBuilder.AppendLine(i_CurrentUser.Introduction);
+                introTextBuilder.AppendLine(i_CurrentUser.About);
             }
 
             introTextBuilder.AppendLine();
             return introTextBuilder.ToString();
         }
 
-        private static string generateProxyResumeUserProperties(FacebookResumeUser i_CurrentUser)
+        protected override string generateProxyResumeUserProperties(FacebookResumeUser i_CurrentUser)
         {
             StringBuilder propertiesTexts = new StringBuilder();
             foreach (PropertyInfo propertyInfo in i_CurrentUser.GetType().GetProperties())

@@ -6,8 +6,8 @@ namespace FacebookAppLogic
 {
     public sealed class HighestFriendScoreBuilder : IFriendScoreBuilder
     {
-        private IFriendScore m_FriendScore = new MutualsFriendScore();
-
+        private IFriendScore m_FriendScore = new FriendMutualsScore();
+        private IFriendScoreCalculator m_FriendScoreCalculator = new FriendHighestScoreCalculator();
         public HighestFriendScoreBuilder()
         {
         }
@@ -19,9 +19,8 @@ namespace FacebookAppLogic
                 throw new Exception("No User is set to check for friends.");
             }
 
-            IFriendScore highestFriendScore = new MutualsFriendScore();
+            IFriendScore highestFriendScore = new FriendMutualsScore();
             User highestScoreFriend = null;
-            IFriendScoreCalculator friendScoreCalculator = new FriendHighestScoreCalculator();
             FacebookUserFilter filteredFriends = new FacebookUserFilter(i_FriendsFilter, io_CurrentUser.Friends);
             IEnumerator<User> filteredFriendsIterator = filteredFriends.GetEnumerator();
             using (filteredFriendsIterator)
@@ -29,7 +28,7 @@ namespace FacebookAppLogic
                 while (filteredFriendsIterator.MoveNext())
                 {
                     this.m_FriendScore.ResetScore();
-                    if (highestFriendScore.Score < friendScoreCalculator.calculateFriendScore(io_CurrentUser, filteredFriendsIterator.Current, this.m_FriendScore))
+                    if (highestFriendScore.Score < this.m_FriendScoreCalculator.calculateFriendScore(io_CurrentUser, filteredFriendsIterator.Current, this.m_FriendScore))
                     {
                         highestFriendScore = this.m_FriendScore;
                         highestScoreFriend = filteredFriendsIterator.Current;

@@ -10,6 +10,7 @@ namespace FacebookAppClient
     public partial class ResumeBuilderForm : Form
     {
         private readonly FacebookResumeUser r_CurrentUser;
+        private readonly FacebookResumeGenerator r_ResumeGenerator = new FacebookResumeGenerator();
 
         public ResumeBuilderForm(User io_CurrentUser)
         {
@@ -34,7 +35,7 @@ namespace FacebookAppClient
             try
             {
                 this.Text = "Facebook Resume Builder - Generating resume";
-                this.ResumeTextBox.Text = FacebookResumeGenerator.GenerateUserResume(this.r_CurrentUser);
+                this.ResumeTextBox.Text = this.r_ResumeGenerator.GenerateUserResume(this.r_CurrentUser);
                 this.Text = "Facebook Resume Builder";
             }
             catch (Exception ex)
@@ -56,7 +57,7 @@ namespace FacebookAppClient
                     if (!string.IsNullOrEmpty(this.InfoAddTextBox.Text))
                     {
                         listProperty.Add(this.InfoAddTextBox.Text);
-                        this.ResumeTextBox.Text = FacebookResumeGenerator.GenerateUserResume(this.r_CurrentUser);
+                        this.ResumeTextBox.Text = this.r_ResumeGenerator.GenerateUserResume(this.r_CurrentUser);
                     }
                     else
                     {
@@ -80,8 +81,8 @@ namespace FacebookAppClient
             {
                 if (!string.IsNullOrEmpty(this.IntroductionTextBox.Text))
                 {
-                    this.r_CurrentUser.Introduction = this.IntroductionTextBox.Text;
-                    this.ResumeTextBox.Text = FacebookResumeGenerator.GenerateUserResume(this.r_CurrentUser);
+                    this.r_CurrentUser.About = this.IntroductionTextBox.Text;
+                    this.ResumeTextBox.Text = this.r_ResumeGenerator.GenerateUserResume(this.r_CurrentUser);
                 }
                 else
                 {

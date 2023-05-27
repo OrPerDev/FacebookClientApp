@@ -137,7 +137,7 @@ namespace FacebookAppClient
             this.AddIntroductionButton.Name = "AddIntroductionButton";
             this.AddIntroductionButton.Size = new System.Drawing.Size(326, 34);
             this.AddIntroductionButton.TabIndex = 70;
-            this.AddIntroductionButton.Text = "Add Introduction";
+            this.AddIntroductionButton.Text = "Add About";
             this.AddIntroductionButton.UseVisualStyleBackColor = false;
             this.AddIntroductionButton.Click += new System.EventHandler(this.AddIntroductionButton_Click);
             // 
@@ -154,9 +154,9 @@ namespace FacebookAppClient
             this.IntroductionLabel.AutoSize = true;
             this.IntroductionLabel.Location = new System.Drawing.Point(437, 289);
             this.IntroductionLabel.Name = "IntroductionLabel";
-            this.IntroductionLabel.Size = new System.Drawing.Size(189, 17);
+            this.IntroductionLabel.Size = new System.Drawing.Size(120, 17);
             this.IntroductionLabel.TabIndex = 68;
-            this.IntroductionLabel.Text = "Add Introduction About Yourself :";
+            this.IntroductionLabel.Text = "Add About Yourself :";
             // 
             // ResumeBuilderForm
             // 

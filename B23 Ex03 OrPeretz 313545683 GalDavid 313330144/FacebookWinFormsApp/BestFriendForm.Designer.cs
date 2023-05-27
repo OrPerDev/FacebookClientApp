@@ -113,6 +113,7 @@ namespace FacebookAppClient
             this.FilteredOutFriendsListBox.Name = "FilteredOutFriendsListBox";
             this.FilteredOutFriendsListBox.Size = new System.Drawing.Size(250, 199);
             this.FilteredOutFriendsListBox.TabIndex = 65;
+            this.FilteredOutFriendsListBox.SelectedIndexChanged += new System.EventHandler(this.FilteredOutFriendsListBox_SelectedIndexChanged);
             // 
             // FilteredFriendsLabel
             // 
@@ -148,6 +149,7 @@ namespace FacebookAppClient
             // RemoveFilterFriendButton
             // 
             this.RemoveFilterFriendButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
+            this.RemoveFilterFriendButton.Enabled = false;
             this.RemoveFilterFriendButton.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RemoveFilterFriendButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.RemoveFilterFriendButton.Location = new System.Drawing.Point(268, 463);

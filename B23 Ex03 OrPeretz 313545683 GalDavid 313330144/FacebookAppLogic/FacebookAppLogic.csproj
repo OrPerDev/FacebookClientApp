@@ -43,12 +43,13 @@
     <Compile Include="AppManager.cs" />
     <Compile Include="AppSettings.cs" />
     <Compile Include="FacebookResumeGenerator.cs" />
+    <Compile Include="FacebookResumeGeneratorTemplate.cs" />
     <Compile Include="FacebookResumeUser.cs" />
     <Compile Include="FacebookUserFilter.cs" />
     <Compile Include="FriendHighestScoreCalculator.cs" />
     <Compile Include="IFacebookResumeUser.cs" />
     <Compile Include="IFriendScoreCalculator.cs" />
-    <Compile Include="MutualsFriendScore.cs" />
+    <Compile Include="FriendMutualsScore.cs" />
     <Compile Include="HighestFriendScoreBuilder.cs" />
     <Compile Include="IFriendScore.cs" />
     <Compile Include="IFriendScoreBuilder.cs" />

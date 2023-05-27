@@ -13,13 +13,13 @@ namespace FacebookAppLogic
         }
         public int calculateFriendScore(User io_CurrentUser, User io_CurrentFriend, IFriendScore io_FriendScore)
         {
-            Thread fetchPostsScoreThread = new Thread(() => fetchFriendsLikesCommentsTagsFromPosts((MutualsFriendScore)io_FriendScore, io_CurrentUser, io_CurrentFriend.Name));
+            Thread fetchPostsScoreThread = new Thread(() => fetchFriendsLikesCommentsTagsFromPosts((FriendMutualsScore)io_FriendScore, io_CurrentUser, io_CurrentFriend.Name));
             fetchPostsScoreThread.Start();
-            Thread fetchMutualFriendsScoreThread = new Thread(() => fetchMutualFriendsWithFriend((MutualsFriendScore)io_FriendScore, io_CurrentUser, io_CurrentFriend));
+            Thread fetchMutualFriendsScoreThread = new Thread(() => fetchMutualFriendsWithFriend((FriendMutualsScore)io_FriendScore, io_CurrentUser, io_CurrentFriend));
             fetchMutualFriendsScoreThread.Start();
-            Thread fetchMutualGroupsScoreThread = new Thread(() => fetchMutualGroupsWithFriend((MutualsFriendScore)io_FriendScore, io_CurrentUser, io_CurrentFriend));
+            Thread fetchMutualGroupsScoreThread = new Thread(() => fetchMutualGroupsWithFriend((FriendMutualsScore)io_FriendScore, io_CurrentUser, io_CurrentFriend));
             fetchMutualGroupsScoreThread.Start();
-            Thread fetchTaggingScoreThread = new Thread(() => fetchFriendTaggingScore((MutualsFriendScore)io_FriendScore, io_CurrentUser, io_CurrentFriend.Name));
+            Thread fetchTaggingScoreThread = new Thread(() => fetchFriendTaggingScore((FriendMutualsScore)io_FriendScore, io_CurrentUser, io_CurrentFriend.Name));
             fetchTaggingScoreThread.Start();
             fetchPostsScoreThread.Join();
             fetchMutualFriendsScoreThread.Join();
@@ -28,7 +28,7 @@ namespace FacebookAppLogic
             return io_FriendScore.Score;
         }
 
-        private void fetchFriendsLikesCommentsTagsFromPosts(MutualsFriendScore i_CurrentFriendScore, User i_CurrentUser, string i_CurrentFriendName)
+        private void fetchFriendsLikesCommentsTagsFromPosts(FriendMutualsScore i_CurrentFriendScore, User i_CurrentUser, string i_CurrentFriendName)
         {
             try
             {
@@ -60,7 +60,7 @@ namespace FacebookAppLogic
             }
         }
 
-        private void fetchFriendTaggingScore(MutualsFriendScore i_CurrentFriendScore, User i_CurrentUser, string i_CurrentFriendName)
+        private void fetchFriendTaggingScore(FriendMutualsScore i_CurrentFriendScore, User i_CurrentUser, string i_CurrentFriendName)
         {
             try
             {
@@ -72,7 +72,7 @@ namespace FacebookAppLogic
             }
         }
 
-        private void fetchMutualFriendsWithFriend(MutualsFriendScore i_CurrentFriendScore, User i_CurrentUser, User i_CurrentFriend)
+        private void fetchMutualFriendsWithFriend(FriendMutualsScore i_CurrentFriendScore, User i_CurrentUser, User i_CurrentFriend)
         {
             try
             {
@@ -86,7 +86,7 @@ namespace FacebookAppLogic
             }
         }
 
-        private void fetchMutualGroupsWithFriend(MutualsFriendScore i_CurrentFriendScore, User i_CurrentUser, User i_CurrentFriend)
+        private void fetchMutualGroupsWithFriend(FriendMutualsScore i_CurrentFriendScore, User i_CurrentUser, User i_CurrentFriend)
         {
             try
             {

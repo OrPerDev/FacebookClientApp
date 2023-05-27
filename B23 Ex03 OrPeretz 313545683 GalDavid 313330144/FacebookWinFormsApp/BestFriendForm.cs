@@ -90,5 +90,18 @@ namespace FacebookAppClient
         {
             this.FilteredOutFriendsListBox.Items.Remove(this.FilteredOutFriendsListBox.SelectedItem);
         }
+
+        private void FilteredOutFriendsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListBox currentListBox = sender as ListBox;
+            if (currentListBox.SelectedItem == null)
+            {
+                this.RemoveFilterFriendButton.Enabled = false;
+            }
+            else
+            {
+                this.RemoveFilterFriendButton.Enabled = true;
+            }
+        }
     }
 }

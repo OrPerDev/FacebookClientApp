@@ -5,7 +5,7 @@ namespace FacebookAppLogic
 {
     public class FacebookResumeUser : IFacebookResumeUser
     {
-        public string Introduction { get; set; } = null;
+        public string About { get; set; } = null;
 
         public List<string> Achievements { get; } = new List<string>();
 

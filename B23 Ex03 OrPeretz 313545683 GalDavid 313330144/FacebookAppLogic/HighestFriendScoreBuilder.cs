@@ -7,10 +7,11 @@ namespace FacebookAppLogic
     public sealed class HighestFriendScoreBuilder : IFriendScoreBuilder
     {
         private IFriendScore m_FriendScore = new FriendMutualsScore();
-        private IFriendScoreCalculator m_FriendScoreCalculator = new FriendHighestScoreCalculator();
+        private IFriendScoreCalculator m_FriendScoreCalculator;
 
-        public HighestFriendScoreBuilder()
+        public HighestFriendScoreBuilder(IFriendScoreCalculator i_FriendScoreCalculator)
         {
+            this.m_FriendScoreCalculator = i_FriendScoreCalculator;
         }
 
         public KeyValuePair<IFriendScore, User> GetFriendScoreAndFriend(User io_CurrentUser, Func<User, bool> i_FriendsFilter)

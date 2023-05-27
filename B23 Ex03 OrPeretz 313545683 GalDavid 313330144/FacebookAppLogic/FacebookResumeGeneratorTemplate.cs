@@ -10,7 +10,7 @@ namespace FacebookAppLogic
             StringBuilder resumeText = new StringBuilder();
             try
             {
-                resumeText.AppendLine(generateUserPersonaInformation(o_CurrentUser));
+                resumeText.AppendLine(this.generateUserPersonaInformation(o_CurrentUser));
             }
             catch (Exception)
             {
@@ -20,7 +20,7 @@ namespace FacebookAppLogic
         Introduction:
             try
             {
-                resumeText.AppendLine(generateUserResumeAbout(o_CurrentUser));
+                resumeText.AppendLine(this.generateUserResumeAbout(o_CurrentUser));
             }
             catch (Exception)
             {
@@ -30,7 +30,7 @@ namespace FacebookAppLogic
         WorkExperience:
             try
             {
-                resumeText.AppendLine(generateUserWorkExperience(o_CurrentUser));
+                resumeText.AppendLine(this.generateUserWorkExperience(o_CurrentUser));
             }
             catch (Exception)
             {
@@ -40,7 +40,7 @@ namespace FacebookAppLogic
         Educations:
             try
             {
-                resumeText.AppendLine(generateUserEducations(o_CurrentUser));
+                resumeText.AppendLine(this.generateUserEducations(o_CurrentUser));
             }
             catch (Exception)
             {
@@ -50,7 +50,7 @@ namespace FacebookAppLogic
         OtherProperties:
             try
             {
-                resumeText.AppendLine(generateProxyResumeUserProperties(o_CurrentUser));
+                resumeText.AppendLine(this.generateProxyResumeUserProperties(o_CurrentUser));
             }
             catch (Exception)
             {

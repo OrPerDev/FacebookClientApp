@@ -21,7 +21,7 @@ namespace FacebookAppClient
             try
             {
                 this.Text = "Facebook Best Friend - Calculating Best Friend Results";
-                FriendScoreCreator friendScoreCreator = new FriendScoreCreator(new HighestFriendScoreBuilder(), this.r_FacebookAppManager.LoggedInUser, (user) => !this.FilteredOutFriendsListBox.Items.Contains(user.Name));
+                FriendScoreCreator friendScoreCreator = new FriendScoreCreator(new HighestFriendScoreBuilder(new FriendHighestScoreCalculator()), this.r_FacebookAppManager.LoggedInUser, (user) => !this.FilteredOutFriendsListBox.Items.Contains(user.Name));
                 this.m_BestFriendAndScore = friendScoreCreator.ComposeFriendScoreResult();
                 this.populateBestFriendData();
                 this.Text = "Facebook DP App";

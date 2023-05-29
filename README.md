@@ -36,12 +36,35 @@ This Feature determines who is the user's best friend while iterating over the U
 
 In this feature the following patterns were implemented:
 - Builder
-    In order to build the complex object which helps to represent the best friend and his/hers score.
+  - In order to build the complex object which helps to represent the best friend and his/hers score.
 - Iterator
-    Used as filter-iterator as a sub-feature to allow the user to add names to filter out from the iteration.
+  - Used as filter-iterator as a sub-feature to allow the user to add names to filter out from the iteration.
 - Strategy
-    Used in order to let better extensibility to create scores scoring strategies.
+  - Used in order to let better extensibility to create scores scoring strategies.
 
 View - 
 
 ![BestFriend](https://github.com/OrPerDev/FacebookClientApp/assets/91319947/84c677e3-2413-422b-8ad1-dc9432304f2b)
+
+## Facebook Resume Builder Feature
+
+This Feature collects the user's data from facebook and creates a resume-like document, moreover the feature let the user add additional content which cannot be found in the user's data collected.
+
+In this feature the following patterns were implemented:
+- Template Method
+  - In order to allow flexability in future text creation of the resume.
+- Proxy
+  - To wrap the user's data is with other additional data which will be presented in the resume.
+
+View -
+
+![ResumeBuilder](https://github.com/OrPerDev/FacebookClientApp/assets/91319947/8403e514-66c9-4d9a-bf42-f543ff7e6a2c)
+
+## Note
+
+The Singleton design pattern was implemented in a generic way - with thread lock double safety.
+
+The singleton design pattern is used both in the App Serialization and The App Manager.
+
+### Special Thanks
+To my lecturer in the course - Guy Ronen for providing the Facebook API dll.

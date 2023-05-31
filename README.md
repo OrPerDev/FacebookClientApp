@@ -11,9 +11,9 @@ This project's main target is to present the implementations of the following de
 - Template Method
 - Strategy
 
-Main View
+Main View -
 
-![MainClient](https://github.com/OrPerDev/FacebookClientApp/assets/91319947/5e92017f-dba2-4f18-94a6-6b58ac074a60)
+![MainClient](https://github.com/OrPerDev/FacebookClientApp/assets/91319947/81db3de8-0f00-471d-ad5e-595bb70f4d03)
 
 
 ## About The App
@@ -44,7 +44,7 @@ In this feature the following patterns were implemented:
 
 View - 
 
-![BestFriend](https://github.com/OrPerDev/FacebookClientApp/assets/91319947/84c677e3-2413-422b-8ad1-dc9432304f2b)
+![BestFriend](https://github.com/OrPerDev/FacebookClientApp/assets/91319947/e5d6278e-ce5e-470e-a7f3-c9c323bd9b21)
 
 ## Facebook Resume Builder Feature
 
@@ -58,7 +58,7 @@ In this feature the following patterns were implemented:
 
 View -
 
-![ResumeBuilder](https://github.com/OrPerDev/FacebookClientApp/assets/91319947/8403e514-66c9-4d9a-bf42-f543ff7e6a2c)
+![ResumeBuilder](https://github.com/OrPerDev/FacebookClientApp/assets/91319947/ba0556bd-5413-47fd-8ff8-43044f62e4fc)
 
 ## Note
 

@@ -30,7 +30,7 @@ namespace FacebookAppLogic
                 while (filteredFriendsIterator.MoveNext())
                 {
                     this.m_FriendScore.ResetScore();
-                    if (highestFriendScore.Score < this.m_FriendScoreCalculator.calculateFriendScore(io_CurrentUser, filteredFriendsIterator.Current, this.m_FriendScore))
+                    if (highestFriendScore.Score < this.m_FriendScoreCalculator.CalculateFriendScore(io_CurrentUser, filteredFriendsIterator.Current, this.m_FriendScore))
                     {
                         highestFriendScore = this.m_FriendScore;
                         highestScoreFriend = filteredFriendsIterator.Current;

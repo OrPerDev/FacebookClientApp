@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-using System.Threading;
+using System.Threading.Tasks;
 using FacebookWrapper.ObjectModel;
 using FacebookAppLogic;
 
@@ -55,7 +55,7 @@ namespace FacebookAppClient
             try
             {
                 this.initLoggedUserDataSources();
-                new Thread(this.initDataSources).Start();
+                this.initDataSourcesAsync();
             }
             catch (Exception ex)
             {
@@ -71,29 +71,17 @@ namespace FacebookAppClient
             this.removeBindingsFromLoggedUserComponents();
         }
 
-        private void initDataSources()
-        {
-            this.invokeActionOnListbox(this.FeedListBox, new Action(() => this.postBindingSource.DataSource = this.r_FacebookAppManager.LoggedInUser.NewsFeed));
-            this.invokeActionOnListbox(this.AlbumsListBox, new Action(() => this.albumBindingSource.DataSource = this.r_FacebookAppManager.LoggedInUser.Albums));
-            this.invokeActionOnListbox(this.LikedPagesListBox, new Action(() => this.pageBindingSource.DataSource = this.r_FacebookAppManager.LoggedInUser.LikedPages));
-            this.invokeActionOnListbox(this.GroupsListBox, new Action(() => this.groupBindingSource.DataSource = this.r_FacebookAppManager.LoggedInUser.Groups));
-            this.invokeActionOnListbox(this.EventsListBox, new Action(() => this.eventBindingSource.DataSource = this.r_FacebookAppManager.LoggedInUser.Events));
-            this.invokeActionOnListbox(this.FriendsListBox, new Action(() => this.userBindingSource.DataSource = this.r_FacebookAppManager.LoggedInUser.Friends));
-            this.invokeActionOnListbox(this.TaggedPhotosListBox, new Action(() => this.photoBindingSource.DataSource = this.r_FacebookAppManager.LoggedInUser.PhotosTaggedIn));
-        }
-
-        private void invokeActionOnListbox(ListBox i_CurrentListbox, Action i_ActionToInvoke)
+        private async void initDataSourcesAsync()
         {
             try
             {
-                if (i_CurrentListbox.InvokeRequired)
-                {
-                    i_CurrentListbox.Invoke(i_ActionToInvoke);
-                }
-                else
-                {
-                    i_ActionToInvoke.Invoke();
-                }
+                this.postBindingSource.DataSource = await Task.Run(() => this.r_FacebookAppManager.LoggedInUser.NewsFeed);
+                this.albumBindingSource.DataSource = await Task.Run(() => this.r_FacebookAppManager.LoggedInUser.Albums);
+                this.pageBindingSource.DataSource = await Task.Run(() => this.r_FacebookAppManager.LoggedInUser.LikedPages);
+                this.groupBindingSource.DataSource = await Task.Run(() => this.r_FacebookAppManager.LoggedInUser.Groups);
+                this.eventBindingSource.DataSource = await Task.Run(() => this.r_FacebookAppManager.LoggedInUser.Events);
+                this.userBindingSource.DataSource = await Task.Run(() => this.r_FacebookAppManager.LoggedInUser.Friends);
+                this.photoBindingSource.DataSource = await Task.Run(() => this.r_FacebookAppManager.LoggedInUser.PhotosTaggedIn);
             }
             catch (Exception ex)
             {
